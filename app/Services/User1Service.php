@@ -16,7 +16,6 @@ class User1Service
     {
         $this->baseUri = config('services.users1.base_uri');
         $this->secret = config('services.users1.secret');
-
     }
 
     public function createUser1($data)
