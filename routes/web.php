@@ -26,6 +26,8 @@ $router->group(['middleware' => 'client.credentials'], function () use ($router)
     $router->put('/users1/{id}', 'User1Controller@update');
     $router->patch('/users1/{id}', 'User1Controller@update');
     $router->delete('/users1/{id}', 'User1Controller@delete');
+    $router->post('/login', 'AuthController@login');
+
 
 // API GATEWAY ROUTES FOR SITE2 USERS
     $router->group(['middleware' => 'client.credentials'], function () use ($router) {
@@ -35,6 +37,8 @@ $router->group(['middleware' => 'client.credentials'], function () use ($router)
     $router->put('/users2/{id}', 'User2Controller@update');
     $router->patch('/users2/{id}', 'User2Controller@update');
     $router->delete('/users2/{id}', 'User2Controller@delete');});
+    $router->post('/login', 'AuthController@login');
+
 });
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
